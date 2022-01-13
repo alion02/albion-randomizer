@@ -1,11 +1,11 @@
 // Store build div
-let build = document.querySelector("#build");
+const build = document.querySelector("#build");
 
 // Store hook button
-let roll = document.querySelector("#roll");
+const roll = document.querySelector("#roll");
 
 // Load item list
-let items = await fetch("./items.json").then(r => r.json());
+const items = await fetch("./items.json").then(r => r.json());
 
 // Items loaded - hook and enable button
 roll.addEventListener("click", () => {
@@ -15,7 +15,7 @@ roll.addEventListener("click", () => {
 	}
 
 	// Roll the basic 4 items
-	let rolledItems = ["helmet", "armor", "shoes", "weapon"]
+	const rolledItems = ["helmet", "armor", "shoes", "weapon"]
 		.map(type => items[type])
 		.map(flatRandom);
 
@@ -26,7 +26,7 @@ roll.addEventListener("click", () => {
 
 	// Update the displayed build
 	build.replaceChildren(...rolledItems.map(item => {
-		let img = document.createElement("img");
+		const img = document.createElement("img");
 		img.width = img.height = 217;
 		img.src = `https://render.albiononline.com/v1/item/T4_${item.id}.png`;
 		img.alt = img.title = item.name;
