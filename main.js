@@ -29,7 +29,7 @@ roll.addEventListener("click", () => {
 		let img = document.createElement("img");
 		img.width = img.height = 217;
 		img.src = `https://render.albiononline.com/v1/item/T4_${item.id}.png`;
-		img.alt = item.name;
+		img.alt = img.title = item.name;
 		return img;
 	}));
 });
